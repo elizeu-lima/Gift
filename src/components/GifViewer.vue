@@ -1,5 +1,4 @@
 <style>
-
 .header-search {
   display: flex;
   justify-content: space-between;
@@ -9,8 +8,8 @@
 }
 
 #search-input {
-  width: calc(50% + 10px); 
-  max-width: 300px; 
+  width: calc(50% + 10px);
+  max-width: 300px;
 }
 
 .grid-container {
@@ -18,14 +17,24 @@
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
   max-width: 1400px;
-  margin: 0 auto; 
-  padding: 20px 10px; 
+  margin: 0 auto;
+  padding: 20px 10px;
+}
+
+.gif-image {
+  transition: transform 0.3s ease-in-out;
+  /* Adiciona uma transição suave para o efeito de zoom */
+}
+
+.gif-image.zoomed {
+  transform: scale(1.1);
+  /* Aumenta o tamanho do GIF em 10% */
 }
 
 @media screen and (max-width: 768px) {
   .grid-container {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
-    padding: 20px 5px; 
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    padding: 20px 5px;
   }
 }
 
@@ -39,8 +48,6 @@
   margin-top: 10px;
   font-weight: bold;
 }
-
-
 </style>
 
 <template>
@@ -52,7 +59,8 @@
 
     <div v-if="gifsData.length > 0" class="grid-container">
       <div class="image-container" v-for="gif in filteredGifs" :key="gif.id">
-        <img :src="gif.images.fixed_height.url" :alt="gif.title">
+        <img :src="gif.images.fixed_height.url" :alt="gif.title" class="gif-image" @mouseover="zoomIn"
+          @mouseleave="zoomOut">
         <div class="image-name">{{ gif.title || gif.username || 'Untitled' }}</div>
       </div>
     </div>
@@ -75,6 +83,12 @@ export default {
       this.filteredGifs = this.gifsData.filter(gif => {
         return gif.title.toLowerCase().includes(this.searchTerm.toLowerCase());
       });
+    },
+    zoomIn(event) {
+      event.target.classList.add('zoomed');
+    },
+    zoomOut(event) {
+      event.target.classList.remove('zoomed');
     }
   },
   mounted() {
@@ -95,10 +109,13 @@ export default {
       });
   },
   watch: {
-    searchTerm: function(newVal) {
+    searchTerm: function (newVal) {
       this.filterGifs();
     }
   }
 };
+
+
+
 </script>
 
