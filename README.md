@@ -1,35 +1,37 @@
-# Gift
+# Desafio Técnico - Giphy API Explorer
 
-This template should help get you started developing with Vue 3 in Vite.
+Este é um desafio técnico para desenvolvedores front-end que utiliza a API da empresa GIPHY Developers, Vue.js e JavaScript puro. O projeto foi inicializado com Vite, portanto, é necessário usar `npm install` para instalar as dependências e `npm run dev` para iniciar o servidor de desenvolvimento.
 
-## Recommended IDE Setup
+## Sobre o Projeto
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+O objetivo deste projeto é criar uma aplicação web que permita aos usuários pesquisar e visualizar GIFs usando a API da Giphy. A aplicação deve ser responsiva e fornecer uma experiência de usuário intuitiva para pesquisa e navegação pelos GIFs.
 
-## Customize configuration
+## Recursos e Funcionalidades
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- **Pesquisa de GIFs:** Os usuários podem pesquisar GIFs por meio de uma caixa de pesquisa na página inicial.
+- **Visualização de GIFs:** Os GIFs resultantes da pesquisa são exibidos em uma grade na página inicial, permitindo aos usuários visualizá-los facilmente.
+- **Responsividade:** A aplicação deve ser responsiva e se adaptar a diferentes tamanhos de tela, proporcionando uma experiência consistente em dispositivos móveis e desktops.
+- **Integração com a API da Giphy:** A aplicação deve se comunicar com a API da Giphy para buscar e exibir os GIFs conforme a pesquisa do usuário.
 
-## Project Setup
+## Como Executar o Projeto
 
-```sh
-npm install
-```
+1. Clone o repositório do projeto para o seu ambiente local.
+2. Navegue até o diretório do projeto no terminal.
+3. Execute `npm install` para instalar as dependências do projeto.
+4. Após a instalação das dependências, execute `npm run dev` para iniciar o servidor de desenvolvimento.
+5. Acesse a aplicação em seu navegador, geralmente em `http://localhost:3000`.
 
-### Compile and Hot-Reload for Development
+## Tecnologias Utilizadas
 
-```sh
-npm run dev
-```
+- Vue.js: Um framework progressivo para a construção de interfaces de usuário.
+- JavaScript: Linguagem de programação utilizada para lógica de frontend.
+- Vite: Um construtor de aplicativos web extremamente rápido e fácil de usar.
+- Giphy API: Uma API que fornece acesso a milhões de GIFs.
 
-### Compile and Minify for Production
+## Contribuição
 
-```sh
-npm run build
-```
+Contribuições são bem-vindas! Se você encontrar um problema ou tiver sugestões para melhorar o projeto, sinta-se à vontade para abrir uma issue ou enviar um pull request.
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+## Licença
 
-```sh
-npm run test:unit
-```
+Este projeto está licenciado sob a [MIT License](https://opensource.org/licenses/MIT).
